@@ -1,6 +1,7 @@
 name: draggable_customized_btn_navy_bar
-description: draggable_customized_btn_navy_bar
-version: 1.0.0
+description: draggable_customized_btn_navy_bar, Drag and drop all your items,
+  customize your bottom navigation in the best way.
+version: 1.0.1+1
 homepage: https://github.com/Mohamed-7018/draggable_customized_btn_navy_bar
 
 environment:
@@ -8,13 +9,14 @@ environment:
   flutter: ">=1.17.0"
 
 dependencies:
-  shared_preferences: ^2.0.15
   dotted_border: ^2.0.0+3
   flutter:
     sdk: flutter
+  flutter_lints: ^2.0.1
+  shared_preferences: ^2.0.15
+  lints: ^2.0.1
 
 dev_dependencies:
-  flutter_lints: ^2.0.0
   flutter_test:
     sdk: flutter
 

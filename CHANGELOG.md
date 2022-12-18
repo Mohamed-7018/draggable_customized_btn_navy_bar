@@ -1,4 +1,6 @@
-## 1.0.0
+## 1.0.1+1
+
+A bottom navigation bar that you can customize with the options you need, without any limits. You can also customize the appearance of the navigation bar.
 
 The package is solving a problem with package bottom_personalized_dot_bar as it solves i's issues and issues can be summarized in the following points:
 - it's old and the owner didn't update it since 3 years.

@@ -7,8 +7,7 @@ class DraggedMenuOption extends StatefulWidget {
   final double? translate;
   final StatusDragged statusDragged;
   final DraggableCustomizedDotBarItem? bottomItem;
-  // ignore: library_private_types_in_public_api
-  final StreamController<_DragItemUpdate>? dragItemUpdateStream;
+  final StreamController<DragItemUpdate>? dragItemUpdateStream;
   final bool settingVisible;
   final bool animationItemNavigator;
 
@@ -26,11 +25,10 @@ class DraggedMenuOption extends StatefulWidget {
       : super(key: key);
 
   @override
-  // ignore: library_private_types_in_public_api
-  _DraggedMenuOptionState createState() => _DraggedMenuOptionState();
+  DraggedMenuOptionState createState() => DraggedMenuOptionState();
 }
 
-class _DraggedMenuOptionState extends State<DraggedMenuOption> {
+class DraggedMenuOptionState extends State<DraggedMenuOption> {
   final GlobalKey _keyItem = GlobalKey();
 
   @override
@@ -44,7 +42,7 @@ class _DraggedMenuOptionState extends State<DraggedMenuOption> {
               final RenderBox renderBox =
                   _keyItem.currentContext!.findRenderObject() as RenderBox;
               final position = renderBox.localToGlobal(Offset.zero);
-              widget.dragItemUpdateStream!.add(_DragItemUpdate(
+              widget.dragItemUpdateStream!.add(DragItemUpdate(
                   widget.bottomItem,
                   Offset(position.dx - 27, position.dy - 16),
                   EventDragEnum.start,
@@ -53,7 +51,7 @@ class _DraggedMenuOptionState extends State<DraggedMenuOption> {
           : null,
       onPanUpdate: activeDrag
           ? (details) {
-              widget.dragItemUpdateStream!.add(_DragItemUpdate(
+              widget.dragItemUpdateStream!.add(DragItemUpdate(
                   widget.bottomItem,
                   details.delta,
                   EventDragEnum.update,
@@ -62,11 +60,8 @@ class _DraggedMenuOptionState extends State<DraggedMenuOption> {
           : null,
       onPanEnd: activeDrag
           ? (details) {
-              widget.dragItemUpdateStream!.add(_DragItemUpdate(
-                  widget.bottomItem,
-                  null,
-                  EventDragEnum.end,
-                  TypeMenuOption.navigation));
+              widget.dragItemUpdateStream!.add(DragItemUpdate(widget.bottomItem,
+                  null, EventDragEnum.end, TypeMenuOption.navigation));
             }
           : null,
       child: widget.statusDragged != StatusDragged.dragged

@@ -1,12 +1,9 @@
-
 part of draggable_customized_btn_navy_bar;
-
 
 class DraggedHiddenMenuOption extends StatefulWidget {
   final IconData? iconData;
   final String? name;
-  // ignore: library_private_types_in_public_api
-  final StreamController<_DragItemUpdate>? dragItemUpdateStream;
+  final StreamController<DragItemUpdate>? dragItemUpdateStream;
   final DraggableCustomizedDotBarItem? bottomItem;
   final StatusDragged statusDragged;
   final double translateData;
@@ -30,12 +27,11 @@ class DraggedHiddenMenuOption extends StatefulWidget {
       : super(key: key);
 
   @override
-  // ignore: library_private_types_in_public_api
-  _DraggedHiddenMenuOptionState createState() =>
-      _DraggedHiddenMenuOptionState();
+  DraggedHiddenMenuOptionState createState() =>
+      DraggedHiddenMenuOptionState();
 }
 
-class _DraggedHiddenMenuOptionState extends State<DraggedHiddenMenuOption> {
+class DraggedHiddenMenuOptionState extends State<DraggedHiddenMenuOption> {
   final GlobalKey _keyItem = GlobalKey();
 
   @override
@@ -47,7 +43,7 @@ class _DraggedHiddenMenuOptionState extends State<DraggedHiddenMenuOption> {
                 final RenderBox renderBox =
                     _keyItem.currentContext!.findRenderObject() as RenderBox;
                 final position = renderBox.localToGlobal(Offset.zero);
-                widget.dragItemUpdateStream!.add(_DragItemUpdate(
+                widget.dragItemUpdateStream!.add(DragItemUpdate(
                     widget.bottomItem,
                     position,
                     EventDragEnum.start,
@@ -56,7 +52,7 @@ class _DraggedHiddenMenuOptionState extends State<DraggedHiddenMenuOption> {
             : null,
         onPanUpdate: (widget.statusDragged != StatusDragged.unDragged)
             ? (details) {
-                widget.dragItemUpdateStream!.add(_DragItemUpdate(
+                widget.dragItemUpdateStream!.add(DragItemUpdate(
                     widget.bottomItem,
                     details.delta,
                     EventDragEnum.update,
@@ -65,7 +61,7 @@ class _DraggedHiddenMenuOptionState extends State<DraggedHiddenMenuOption> {
             : null,
         onPanEnd: (widget.statusDragged != StatusDragged.unDragged)
             ? (details) {
-                widget.dragItemUpdateStream!.add(_DragItemUpdate(
+                widget.dragItemUpdateStream!.add(DragItemUpdate(
                     widget.bottomItem,
                     null,
                     EventDragEnum.end,

@@ -5,6 +5,7 @@
 </a>
 ![Widget Tests](https://github.com/pedromassango/bottom_navy_bar/workflows/Widget%20Tests/badge.svg?branch=master)
 
+A bottom navigation bar that you can customize with the options you need, without any limits. You can also customize the appearance of the navigation bar.
 
 The package is solving a problem with package bottom_personalized_dot_bar as it solves i's issues and issues can be summarized in the following points:
 - it's old and the owner didn't update it since 3 years.
@@ -15,8 +16,10 @@ The package is solving a problem with package bottom_personalized_dot_bar as it 
 
 The Btn Nav bat is very beautiful and many people likes it so much. For these reasons I build this package for public to help them to add this beautful btn nav bar to their projets. I wish this will help you.
 
-# Package Structure
-![image](https://user-images.githubusercontent.com/80456446/208295948-592ae345-9b02-4c52-98d2-b5ebb4568626.png)
+
+## Live Preview
+![image](https://github.com/Mohamed-7018/Mohamed-7018/blob/main/assets/DraggableCustomizedBtnNavyBar%20%20(2).gif)
+
 
 ## Supported platforms
 
@@ -25,11 +28,10 @@ The Btn Nav bat is very beautiful and many people likes it so much. For these re
 * Flutter web
 * Flutter desktop
 
-## Live Preview
-![image](https://github.com/Mohamed-7018/Mohamed-7018/blob/main/assets/DraggableCustomizedBtnNavyBar%20%20(2).gif)
+# Package Structure
+![image](https://user-images.githubusercontent.com/80456446/208295948-592ae345-9b02-4c52-98d2-b5ebb4568626.png)
 
-
-
+## Null Safe!!
 Hint: The package is supporting null safety
 ![1_GjeLhjfdpqhmGc3PjRf-BQ](https://user-images.githubusercontent.com/80456446/139783129-f561cb1f-8ff6-47e8-8eab-7ca5876b1dff.png)
 

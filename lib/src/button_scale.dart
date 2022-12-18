@@ -15,7 +15,6 @@ class ButtonScale extends StatefulWidget {
       this.child,
       this.borderRadius,
       this.color,
-      // ignore: unused_element
       this.minScale = 0.90,
       this.activeOpacity = false})
       : super(key: key);

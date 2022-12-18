@@ -154,7 +154,7 @@ class DraggableCustomizedBtnNavyBar extends StatefulWidget {
 
 class _DraggableCustomizedBtnNavyBarState
     extends State<DraggableCustomizedBtnNavyBar> {
-  StreamController<_DragItemUpdate>? _dragItemUpdateStream;
+  StreamController<DragItemUpdate>? dragItemUpdateStream;
   ScrollController? _scrollController;
   double? _positionIndicatorDot;
   double? _widthBase;
@@ -248,9 +248,9 @@ class _DraggableCustomizedBtnNavyBarState
     _buildPrefs();
     //////
 
-    _dragItemUpdateStream = StreamController<_DragItemUpdate>();
+    dragItemUpdateStream = StreamController<DragItemUpdate>();
     _scrollController = ScrollController();
-    _dragItemUpdateStream!.stream.listen((event) {
+    dragItemUpdateStream!.stream.listen((event) {
       setState(() {
         if (event.eventDragEnum == EventDragEnum.start) {
           _draggedItem = event.item;
@@ -351,9 +351,9 @@ class _DraggableCustomizedBtnNavyBarState
                           ? indexPositionHidden
                           : _translateHiddenItemList.length);
                 } else {
-                  widget.onDisplayedStackIsEmpty !=null ? 
-                      widget.onDisplayedStackIsEmpty!():
-                      _roundedSnackBar(context, "The drawer can't be empty");
+                  widget.onDisplayedStackIsEmpty != null
+                      ? widget.onDisplayedStackIsEmpty!()
+                      : _roundedSnackBar(context, "The drawer can't be empty");
                 }
                 _translateItemList = [];
                 _resetOperators();
@@ -390,9 +390,7 @@ class _DraggableCustomizedBtnNavyBarState
                   _insertItemToNavigator(indexItem, indexNavigator);
                 } else {
                   widget.onDisplayedStackOverflows != null
-                      ? 
-                          widget.onDisplayedStackOverflows!()
-                        
+                      ? widget.onDisplayedStackOverflows!()
                       : _roundedSnackBar(context, "No more items can be added");
                 }
                 _translateItemList = [];
@@ -637,7 +635,7 @@ class _DraggableCustomizedBtnNavyBarState
 
   @override
   void dispose() {
-    _dragItemUpdateStream!.close();
+    dragItemUpdateStream!.close();
     _scrollController!.dispose();
     super.dispose();
   }
@@ -919,7 +917,7 @@ class _DraggableCustomizedBtnNavyBarState
                 ? StatusDragged.dragged
                 : StatusDragged.unDragged,
         bottomItem: item,
-        dragItemUpdateStream: _dragItemUpdateStream,
+        dragItemUpdateStream: dragItemUpdateStream,
         settingVisible: _settingVisible,
         animationItemNavigator: _animationItemNavigator,
       ));
@@ -935,7 +933,7 @@ class _DraggableCustomizedBtnNavyBarState
           bottomItem: item,
           iconData: item!.icon,
           name: item.name,
-          dragItemUpdateStream: _dragItemUpdateStream,
+          dragItemUpdateStream: dragItemUpdateStream,
           statusDragged: _draggedItem == null
               ? StatusDragged.none
               : item.keyItem == _draggedItem!.keyItem
