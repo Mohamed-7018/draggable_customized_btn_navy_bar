@@ -15,20 +15,19 @@ The package is solving a problem with package bottom_personalized_dot_bar as it 
 
 The Btn Nav bat is very beautiful and many people likes it so much. For these reasons I build this package for public to help them to add this beautful btn nav bar to their projets. I wish this will help you.
 
+# Package Structure
+![image](https://user-images.githubusercontent.com/80456446/208295948-592ae345-9b02-4c52-98d2-b5ebb4568626.png)
 
-|-- lib
-|   |-- draggable_customized_btn_navy_bar.dart
-|   '-- src
-|       |-- button_scale.dart
-|       |-- colors.dart
-|       |-- drag_item_update.dart
-|       |-- draggable_customized_dot_bar_item.dart
-|       |-- dragged_hidden_menu_option.dart
-|       |-- dragged_menu_option.dart
-|       |-- enums.dart
-|       |-- hidden_menu_option.dart
-|       |-- menu_option.dart
-|       '-- parent.dart
+## Supported platforms
+
+* Flutter Android
+* Flutter iOS
+* Flutter web
+* Flutter desktop
+
+## Live Preview
+![image](https://github.com/Mohamed-7018/Mohamed-7018/blob/main/assets/DraggableCustomizedBtnNavyBar%20%20(2).gif)
+
 
 
 Hint: The package is supporting null safety
