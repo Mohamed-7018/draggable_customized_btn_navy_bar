@@ -6,7 +6,8 @@ class MenuOption extends StatelessWidget {
   final GestureTapCallback? _onTap;
   final bool _enable;
 
-  const MenuOption(this._iconData, this._colorIcon, this._onTap, this._enable, {super.key});
+  const MenuOption(this._iconData, this._colorIcon, this._onTap, this._enable,
+      {super.key});
 
   @override
   Widget build(BuildContext context) {

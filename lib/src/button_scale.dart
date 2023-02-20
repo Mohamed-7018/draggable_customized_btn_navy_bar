@@ -1,6 +1,5 @@
 part of draggable_customized_btn_navy_bar;
 
-
 class ButtonScale extends StatefulWidget {
   final Widget? child;
   final VoidCallback? onTap;

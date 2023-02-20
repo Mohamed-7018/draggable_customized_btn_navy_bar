@@ -3,14 +3,6 @@ import 'package:flutter/material.dart';
 
 import 'dart:math';
 
-/*
-I/flutter (26783): item-5 - Alarma
-I/flutter (26783): item-6 - Mensaje
-I/flutter (26783): item-7 - Alerta
-I/flutter (26783): item-8 - Seguridad
-I/flutter (26783): item-9 - Ayuda
-I/flutter (26783): item-10 - Config.
-*/
 void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
@@ -51,7 +43,7 @@ class MyHomePageState extends State<MyHomePage> {
             transitionBuilder: (Widget child, Animation<double> animation) {
               final revealAnimation = Tween(begin: 0.0, end: 1.0).animate(
                   CurvedAnimation(parent: animation, curve: Curves.ease));
-               return AnimatedBuilder(
+              return AnimatedBuilder(
                 builder: (BuildContext context, Widget? _) {
                   return _buildAnimation(
                       context, _itemSelected, child, revealAnimation.value);
@@ -62,23 +54,11 @@ class MyHomePageState extends State<MyHomePage> {
             child: _buildPage(_itemSelected),
           ),
           DraggableCustomizedBtnNavyBar(
-            
               width: (MediaQuery.of(context).size.width > 600) ? 500.0 : null,
               keyItemSelected: _itemSelected,
               doneText: 'Done',
               settingTitleText: 'Your Menu',
               settingSubTitleText: 'Drag and drop',
-              
-              // boxShadow: const [
-              //   BoxShadow(
-              //       color: Colors.black12, blurRadius: 10.0, spreadRadius: 1.0)
-              // ],
-              // iconSettingColor: const Color(0xFFFFD201),
-              // buttonDoneColor: const Color(0xFFFFD500),
-              // settingSubTitleColor: const Color(0xFFFECE02),
-              // maximumNumberOfDisplayItems : 4,
-              // minimumNumberOfDisplayedItems: 2,
-              
               hiddenItems: <DraggableCustomizedDotBarItem>[
                 DraggableCustomizedDotBarItem('item-4',
                     icon: Icons.cloud,
@@ -264,11 +244,11 @@ class MyHomePageState extends State<MyHomePage> {
 }
 
 class FlutterPage extends StatelessWidget {
-  final Color  ? backgroundColor;
-  final String ?  urlAsset;
-  final String  ? title;
+  final Color? backgroundColor;
+  final String? urlAsset;
+  final String? title;
 
-  const FlutterPage({Key ? key, this.backgroundColor, this.urlAsset, this.title})
+  const FlutterPage({Key? key, this.backgroundColor, this.urlAsset, this.title})
       : super(key: key);
 
   @override
@@ -296,10 +276,11 @@ class FlutterPage extends StatelessWidget {
 }
 
 class PageReveal extends StatelessWidget {
-  final double ?  revealPercent;
-  final Widget  ? child;
+  final double? revealPercent;
+  final Widget? child;
 
-  const PageReveal({Key ?  key, this.revealPercent, this.child}) : super(key: key);
+  const PageReveal({Key? key, this.revealPercent, this.child})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {

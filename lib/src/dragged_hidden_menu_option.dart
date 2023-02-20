@@ -27,8 +27,7 @@ class DraggedHiddenMenuOption extends StatefulWidget {
       : super(key: key);
 
   @override
-  DraggedHiddenMenuOptionState createState() =>
-      DraggedHiddenMenuOptionState();
+  DraggedHiddenMenuOptionState createState() => DraggedHiddenMenuOptionState();
 }
 
 class DraggedHiddenMenuOptionState extends State<DraggedHiddenMenuOption> {
