@@ -172,6 +172,7 @@ class _DraggableCustomizedBtnNavyBarState
   bool _animationItemNavigator = false;
   List<DraggableCustomizedDotBarItem?>? _internalItems;
   List<DraggableCustomizedDotBarItem?>? _internalHiddenItems;
+  String get _sufffix = (widget.key?.toString() ?? "").replaceAll(RegExp(r'[\W]'), "_"); // suffix for save pref of multiple NavBar
   late List<DraggableCustomizedDotBarItem?> _all;
   late Map<String, DraggableCustomizedDotBarItem> map;
 
@@ -184,10 +185,10 @@ class _DraggableCustomizedBtnNavyBarState
   void _buildPrefs() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     keys = prefs.getStringList(
-            'draggable_customized_btn_navy_bar_keys_package_samir') ??
+            'draggable_customized_btn_navy_bar_keys_package_samir'+_suffix) ??
         [];
     unKey = prefs.getStringList(
-            'undraggable_customized_btn_navy_bar_keys_package_samir') ??
+            'undraggable_customized_btn_navy_bar_keys_package_samir'+_suffix) ??
         [];
     if (keys.isNotEmpty) {
       _internalItems = [];
@@ -223,13 +224,13 @@ class _DraggableCustomizedBtnNavyBarState
   void _updatePrefs(List<String> keys) async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     prefs.setStringList(
-        'draggable_customized_btn_navy_bar_keys_package_samir', keys);
+        'draggable_customized_btn_navy_bar_keys_package_samir'+_suffix, keys);
   }
 
   void _updateUnPrefs(List<String> unkeys) async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     prefs.setStringList(
-        'undraggable_customized_btn_navy_bar_keys_package_samir', unkeys);
+        'undraggable_customized_btn_navy_bar_keys_package_samir'+_suffix, unkeys);
   }
 
   @override
