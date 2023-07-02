@@ -1,3 +1,26 @@
+ ## 1.1.0
+This version allow multiple NavBar with different configurations, with just add Key
+
+```dart
+// HomePage.dart
+DraggableCustomizedBtnNavyBar(
+        key : Key("home"), // custom config key for home
+        ...
+)
+```
+```dart
+// Dashboard.dart
+DraggableCustomizedBtnNavyBar(
+        key : Key("admin"), // custom config key for dashboard
+        ...
+)
+```
+
+When I navigate to Dashboard, and update NavBar the configuration is only saved and restored for Dashboard and not for Home.
+
+## 1.0.1+2
+ Dart format to pass static analysis
+
 ## 1.0.1+1
 
 A bottom navigation bar that you can customize with the options you need, without any limits. You can also customize the appearance of the navigation bar.
@@ -10,6 +33,3 @@ The package is solving a problem with package bottom_personalized_dot_bar as it 
 - not cross platform.
 
 The Btn Nav bat is very beautiful and many people likes it so much. For these reasons I build this package for public to help them to add this beautful btn nav bar to their projets. I wish this will help you.
-
-## 1.0.1+2
- Dart format to pass static analysis

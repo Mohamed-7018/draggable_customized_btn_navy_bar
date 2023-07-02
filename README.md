@@ -30,9 +30,9 @@ The Btn Nav bat is very beautiful and many people likes it so much. For these re
 # Package Structure
 ![image](https://user-images.githubusercontent.com/80456446/208295948-592ae345-9b02-4c52-98d2-b5ebb4568626.png)
 
-## Null Safe!!
+<!-- ## Null Safe!!
 Hint: The package is supporting null safety
-![1_GjeLhjfdpqhmGc3PjRf-BQ](https://user-images.githubusercontent.com/80456446/139783129-f561cb1f-8ff6-47e8-8eab-7ca5876b1dff.png)
+![1_GjeLhjfdpqhmGc3PjRf-BQ](https://user-images.githubusercontent.com/80456446/139783129-f561cb1f-8ff6-47e8-8eab-7ca5876b1dff.png) -->
 
 ## Package overview
 
@@ -100,6 +100,7 @@ Scaffold(
 
 |      Attribute          |Description
 |----------------|-------------------------------
+|`key`|unique key which allow multiple NavBar with different configuration
 |`items`| List of items to be displayed in the navigation bar
 |`hiddenItems`| List of items that will be hidden
 |`maximumNumberOfDisplayItems`| max number of displayed items - default:5
